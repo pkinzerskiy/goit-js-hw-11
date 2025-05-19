@@ -10,6 +10,9 @@ import { getImagesByQuery } from "./js/pixabay-api.js";
 import { createGallery, clearGallery, showLoader, hideLoader } from './js/render-functions.js';
 
 const container = document.querySelector(".gallery");
+const loader = document.querySelector(".loader");
+
+loader.classList.remove('loader');
 
 const form = document.querySelector("form");
 form.addEventListener("submit", processingBtn);
