@@ -1,7 +1,7 @@
 "use strict";
 const container = document.querySelector(".gallery");
 // приймає масив images, створювати HTML-розмітку для галереї, додавати її в контейнер галереї та викликати метод екземпляра SimpleLightbox refresh(). Нічого не повертає.
-const loader = document.querySelector(".loader");
+const load = document.querySelector(".load");
 
 export function createGallery(images) {
     console.log("createGallery",images);
@@ -48,11 +48,11 @@ export function clearGallery() {
 };
 // повинна додавати клас для відображення лоадера. Нічого не повертає.
 export function showLoader() {
-    loader.classList.add('loader');    
+    load.classList.add('loader');    
 };
 //нічого не приймає, повинна прибирати клас для відображення лоадера. Нічого не повертає.
 export function hideLoader() {
-    loader.classList.remove('loader');
+    load.classList.remove('loader');
 }
 
 
