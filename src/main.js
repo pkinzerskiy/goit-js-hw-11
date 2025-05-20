@@ -55,7 +55,7 @@ function message(msg) {
         messageColor: 'white', // blue, red, 
         backgroundColor: 'red',
         position: 'topRight',
-        iconUrl: './public/cirlcle-error.svg',
+        iconUrl: './cirlcle-error.svg',
     });
 }
 
