@@ -3,7 +3,6 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import { getImagesByQuery } from "./js/pixabay-api.js";
-
 import { createGallery, clearGallery, showLoader, hideLoader, createLightBox } from './js/render-functions.js';
 
 const container = document.querySelector(".gallery");
@@ -55,7 +54,9 @@ function message(msg) {
         messageColor: 'white', // blue, red, 
         backgroundColor: 'red',
         position: 'topRight',
-        iconUrl: './../assets/cirlcle-error.svg',
+        iconUrl: './img/error_outline.svg',
+        iconText: 'white',
+        iconColor: 'white'
     });
 }
 
