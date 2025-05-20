@@ -54,9 +54,10 @@ function message(msg) {
         messageColor: 'white', // blue, red, 
         backgroundColor: 'red',
         position: 'topRight',
-        iconUrl: './public/error_outline.svg',
-        iconText: 'white',
-        iconColor: 'white'
+        image: './img/error.svg',
+        imageWidth: 50
+        // iconText: 'white',
+        //iconColor: 'white'
     });
 }
 
