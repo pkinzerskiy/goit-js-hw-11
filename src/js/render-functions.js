@@ -1,10 +1,14 @@
 "use strict";
+
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const container = document.querySelector(".gallery");
 // приймає масив images, створювати HTML-розмітку для галереї, додавати її в контейнер галереї та викликати метод екземпляра SimpleLightbox refresh(). Нічого не повертає.
 const loader = document.querySelector(".loader");
 
 export function createGallery(images) {
-    console.log("createGallery",images);
+ //   console.log("createGallery",images);
  container.innerHTML = images
     .map(
       ({
@@ -41,6 +45,14 @@ export function createGallery(images) {
     )
     .join('');
 };
+
+export function createLightBox() {
+  let galleryLightBox = new SimpleLightbox('.gallery li a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
+  galleryLightBox.refresh();
+}
 
 // нічого не приймає та повинна очищати вміст контейнера галереї. Нічого не повертає.
 export function clearGallery() {

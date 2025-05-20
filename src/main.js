@@ -1,13 +1,10 @@
 "use strict";
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import { getImagesByQuery } from "./js/pixabay-api.js";
 
-import { createGallery, clearGallery, showLoader, hideLoader } from './js/render-functions.js';
+import { createGallery, clearGallery, showLoader, hideLoader, createLightBox } from './js/render-functions.js';
 
 const container = document.querySelector(".gallery");
 const loader = document.querySelector(".loader");
@@ -31,13 +28,13 @@ function processingBtn(event) {
     
     showLoader();
 
-    console.log("query", query );
+    // console.log("query", query );
     getImagesByQuery(query)
         .then(response => {
             const data = response.data.hits;
-            console.log("response:", response.data.hits);
+//            console.log("response:", response.data.hits);
             if (!response.data.hits.length) {
-                console.log("totalHits", response.data.total);
+    //            console.log("totalHits", response.data.total);
                 hideLoader();
                 message('Sorry, there are no images matching your search query. Please try again!');
                 return;
@@ -51,13 +48,6 @@ function processingBtn(event) {
     form.reset();
 }
 
-function createLightBox() {
-  let galleryLightBox = new SimpleLightbox('.gallery li a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  galleryLightBox.refresh();
-}
 
 function message(msg) {
     iziToast.show({
@@ -65,8 +55,7 @@ function message(msg) {
         messageColor: 'white', // blue, red, 
         backgroundColor: 'red',
         position: 'topRight',
-        iconUrl: './img/cirlcle-error.svg',
-        iconColor: 'white'
+        iconUrl: './public/cirlcle-error.svg',
     });
 }
 
